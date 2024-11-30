@@ -68,7 +68,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" asChild>
               <a
-                href="https://github.com/subhadeeproy3902/dictionary"
+                href="https://github.com/subhadeeproy3902/dictionary-mvp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
