@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Dictionary App",
   description: "A beautiful dictionary application with voice support",
+  metadataBase: new URL("https://dictionary-mvp.vercel.app"),
 };
 
 export default function RootLayout({
