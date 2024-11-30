@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&display=swap');
+
+:root {
+  --background: 40 33% 98%;
+  --foreground: 30 9% 20%;
+  --card: 40 20% 97%;
+  --card-foreground: 30 9% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 9% 20%;
+  --primary: 35 100% 46%;
+  --primary-foreground: 40 33% 98%;
+  --secondary: 30 15% 90%;
+  --secondary-foreground: 30 9% 20%;
+  --muted: 30 15% 90%;
+  --muted-foreground: 30 6% 45%;
+  --accent: 30 15% 90%;
+  --accent-foreground: 30 9% 20%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 35 20% 85%;
+  --input: 35 20% 85%;
+  --ring: 35 100% 46%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 30 9% 10%;
+  --foreground: 40 33% 98%;
+  --card: 30 9% 13%;
+  --card-foreground: 40 33% 98%;
+  --popover: 30 9% 13%;
+  --popover-foreground: 40 33% 98%;
+  --primary: 35 100% 46%;
+  --primary-foreground: 30 9% 13%;
+  --secondary: 30 9% 16%;
+  --secondary-foreground: 40 33% 98%;
+  --muted: 30 9% 16%;
+  --muted-foreground: 30 9% 70%;
+  --accent: 30 9% 16%;
+  --accent-foreground: 40 33% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 40 33% 98%;
+  --border: 30 9% 16%;
+  --input: 30 9% 16%;
+  --ring: 35 100% 46%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Lora', serif;
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.manuscript-card {
+  @apply relative bg-card border-2 border-border rounded-lg p-8;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.manuscript-card::before {
+  content: '';
+  @apply absolute -left-2 -top-2 w-full h-full border-2 border-primary/20 rounded-lg -z-10;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary/60;
+}
+
+.initial-letter::first-letter {
+  @apply float-left text-4xl font-bold text-primary mr-2;
+  font-family: 'Playfair Display', serif;
+}
+
+.search-input {
+  @apply bg-card border-2 border-border focus:border-primary/50 focus:ring-primary/20;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
